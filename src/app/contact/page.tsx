@@ -55,7 +55,8 @@ export default function Contact() {
               </div>
               <h3 className="text-3xl font-bold text-white mb-4 text-center">Our Office</h3>
               <div className="text-center space-y-2">
-                <p className="text-gray-400 text-lg">Will be added later</p>
+                <p className="text-gray-400 text-lg">8401 Mayland Dr # 7297</p>
+                <p className="text-gray-400 text-lg">Richmond, VA 23294</p>
               </div>
             </div>
           </motion.div>
