@@ -138,7 +138,7 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-gray-500 text-sm">
-            © 2024 Madwess. All rights reserved. | Powered by Readdy
+            © 2024 Madwess. All rights reserved.
           </p>
           <div className="flex gap-6">
             <a href="/terms" className="text-gray-500 hover:text-white transition text-sm">

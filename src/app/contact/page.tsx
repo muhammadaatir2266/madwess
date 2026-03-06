@@ -40,11 +40,30 @@ export default function Contact() {
           </motion.p>
         </motion.div>
 
-        <div className="max-w-2xl mx-auto">
-          {/* Contact Form */}
+        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          {/* Left side - Our Office */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.2 }}
+          >
+            <div className="glass glass-border rounded-xl p-8">
+              <div className="flex justify-center mb-6">
+                <div className="w-20 h-20 rounded-full bg-gradient-to-br from-gold via-yellow-500 to-blue flex items-center justify-center">
+                  <MapPin className="w-10 h-10 text-black" />
+                </div>
+              </div>
+              <h3 className="text-3xl font-bold text-white mb-4 text-center">Our Office</h3>
+              <div className="text-center space-y-2">
+                <p className="text-gray-400 text-lg">Will be added later</p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Right side - Contact Form */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.3 }}
           >
             <Card className="border-gray-800/50">
