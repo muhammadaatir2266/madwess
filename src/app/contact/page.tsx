@@ -9,28 +9,6 @@ import { Button } from '@/components/ui/button';
 import { MapPin, Mail, Phone } from 'lucide-react';
 
 export default function Contact() {
-  const contactInfo = [
-    {
-      icon: Mail,
-      title: 'Email Us',
-      detail: 'Support@madwess.store',
-      color: 'from-gold via-yellow-500 to-blue'
-    },
-    {
-      icon: Phone,
-      title: 'Call Us',
-      detail: '(804) 488-3517',
-      color: 'from-gold via-yellow-500 to-blue'
-    },
-    {
-      icon: MapPin,
-      title: 'Virtual Address',
-      detail: '8401 Mayland Dr # 7297',
-      detail2: 'Richmond, VA 23294',
-      color: 'from-gold via-yellow-500 to-blue'
-    }
-  ];
-
   return (
     <div className="min-h-screen bg-black relative overflow-hidden pt-24">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-gold/10 rounded-full blur-[150px]" />
@@ -58,85 +36,72 @@ export default function Contact() {
             transition={{ delay: 0.2 }}
             className="text-gray-400 text-lg"
           >
-            We'd love to hear from you
+            We'd love to hear from you. Send us a message and we'll respond as soon as possible
           </motion.p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {/* Left side - Contact Info Cards */}
-          <div className="space-y-6">
-            {contactInfo.map((info, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, x: -30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.1 * idx + 0.3, duration: 0.5 }}
-              >
-                <Card className="group hover:shadow-xl hover:shadow-gold/10 transition-all duration-300 border-gray-800/50">
-                  <CardContent className="p-6">
-                    <div className="flex items-start gap-4">
-                      <div className={`w-12 h-12 rounded-lg bg-gradient-to-br ${info.color} flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}>
-                        <info.icon className="w-6 h-6 text-black" />
-                      </div>
-                      <div>
-                        <h3 className="text-lg font-semibold text-white mb-1">{info.title}</h3>
-                        <p className="text-gray-400 text-sm">{info.detail}</p>
-                        {info.detail2 && <p className="text-gray-400 text-sm">{info.detail2}</p>}
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-
-          {/* Right side - Contact Form */}
+        <div className="max-w-2xl mx-auto">
+          {/* Contact Form */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.6 }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
           >
             <Card className="border-gray-800/50">
               <CardContent className="p-8 space-y-5">
-                <div>
-                  <label className="text-sm text-gray-400 mb-2 block">Name</label>
-                  <Input 
-                    placeholder="" 
-                    className="h-12 bg-black/40 border-gray-800 focus:border-gold transition-colors" 
-                  />
-                </div>
-                
-                <div>
-                  <label className="text-sm text-gray-400 mb-2 block">Email</label>
-                  <Input 
-                    type="email" 
-                    placeholder="" 
-                    className="h-12 bg-black/40 border-gray-800 focus:border-gold transition-colors" 
-                  />
-                </div>
-                
-                <div>
-                  <label className="text-sm text-gray-400 mb-2 block">Phone</label>
-                  <Input 
-                    placeholder="" 
-                    className="h-12 bg-black/40 border-gray-800 focus:border-gold transition-colors" 
-                  />
-                </div>
-                
-                <div>
-                  <label className="text-sm text-gray-400 mb-2 block">Message</label>
-                  <textarea
-                    className="w-full h-32 px-4 py-3 rounded-lg border border-gray-800 bg-black/40 text-white placeholder:text-muted-foreground focus:ring-2 focus:ring-gold focus:border-gold backdrop-blur-xl resize-none transition-colors"
-                    placeholder=""
-                  />
-                </div>
-                
-                <Button 
-                  className="w-full h-12 text-base font-semibold bg-gradient-to-r from-gold to-blue hover:opacity-90 transition-opacity text-black" 
-                  size="lg"
-                >
-                  Send Message
-                </Button>
+                <form action="mailto:hello@madwess.ai" method="post" encType="text/plain">
+                  <div className="space-y-5">
+                    <div>
+                      <label className="text-sm text-gray-400 mb-2 block">Name</label>
+                      <Input 
+                        type="text"
+                        name="name"
+                        placeholder="" 
+                        required
+                        className="h-12 bg-black/40 border-gray-800 focus:border-gold transition-colors" 
+                      />
+                    </div>
+                    
+                    <div>
+                      <label className="text-sm text-gray-400 mb-2 block">Email</label>
+                      <Input 
+                        type="email"
+                        name="email"
+                        placeholder="" 
+                        required
+                        className="h-12 bg-black/40 border-gray-800 focus:border-gold transition-colors" 
+                      />
+                    </div>
+                    
+                    <div>
+                      <label className="text-sm text-gray-400 mb-2 block">Phone</label>
+                      <Input 
+                        type="tel"
+                        name="phone"
+                        placeholder="" 
+                        className="h-12 bg-black/40 border-gray-800 focus:border-gold transition-colors" 
+                      />
+                    </div>
+                    
+                    <div>
+                      <label className="text-sm text-gray-400 mb-2 block">Message</label>
+                      <textarea
+                        name="message"
+                        required
+                        className="w-full h-32 px-4 py-3 rounded-lg border border-gray-800 bg-black/40 text-white placeholder:text-muted-foreground focus:ring-2 focus:ring-gold focus:border-gold backdrop-blur-xl resize-none transition-colors"
+                        placeholder=""
+                      />
+                    </div>
+                    
+                    <Button 
+                      type="submit"
+                      className="w-full h-12 text-base font-semibold bg-gradient-to-r from-gold to-blue hover:opacity-90 transition-opacity text-black" 
+                      size="lg"
+                    >
+                      Send Message
+                    </Button>
+                  </div>
+                </form>
               </CardContent>
             </Card>
           </motion.div>

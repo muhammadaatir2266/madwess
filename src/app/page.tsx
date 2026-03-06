@@ -20,8 +20,8 @@ export default function Home() {
   const powerfulFeatures = [
     {
       icon: Sparkles,
-      title: 'AI-Powered Automation',
-      description: 'Leverage cutting-edge artificial intelligence to automate repetitive tasks, streamline complex workflows, and boost productivity. Our AI learns from your operations to provide intelligent suggestions and handle routine processes automatically, freeing your team to focus on strategic initiatives.'
+      title: 'AI-Powered Intelligence',
+      description: 'Leverage cutting-edge artificial intelligence to streamline complex workflows and boost productivity. Our AI learns from your operations to provide intelligent suggestions and handle routine processes, freeing your team to focus on strategic initiatives.'
     },
     {
       icon: Shield,
@@ -41,7 +41,7 @@ export default function Home() {
     {
       icon: Clock,
       title: '24/7 AI Assistance',
-      description: 'Round-the-clock intelligent support that never sleeps. Our AI-powered assistance handles customer inquiries, troubleshoots issues, and provides instant responses at any time. Ensure business continuity with automated monitoring and proactive problem resolution.'
+      description: 'Round-the-clock intelligent support that never sleeps. Our AI-powered assistance handles customer inquiries, troubleshoots issues, and provides instant responses at any time. Ensure business continuity with continuous monitoring and proactive problem resolution.'
     },
     {
       icon: Users,
@@ -56,7 +56,7 @@ export default function Home() {
       role: 'CEO, PropTech Solutions',
       image: '/madwess-logo.png',
       rating: 5,
-      text: 'MADWESS transformed our real estate operations. The AI automation saved us countless hours and the ROI was immediate. Best investment we\'ve made this year.'
+      text: 'MADWESS transformed our real estate operations. The AI platform saved us countless hours and the ROI was immediate. Best investment we\'ve made this year.'
     },
     {
       name: 'Michael Chen',
@@ -70,7 +70,7 @@ export default function Home() {
       role: 'Founder, Digital Agency',
       image: '/madwess-logo.png',
       rating: 5,
-      text: 'We\'ve tried many automation tools, but MADWESS stands out. The AI is smart, the interface is beautiful, and the results speak for themselves.'
+      text: 'We\'ve tried many tools, but MADWESS stands out. The AI is smart, the interface is beautiful, and the results speak for themselves.'
     },
     {
       name: 'David Thompson',
@@ -105,28 +105,6 @@ export default function Home() {
 
   const visibleTestimonials = testimonials.slice(currentTestimonialIndex * 3, currentTestimonialIndex * 3 + 3);
 
-  const contactInfo = [
-    {
-      icon: Mail,
-      title: 'Email Us',
-      detail: 'Support@madwess.store',
-      color: 'from-gold via-yellow-500 to-blue'
-    },
-    {
-      icon: Phone,
-      title: 'Call Us',
-      detail: '(804) 488-3517',
-      color: 'from-gold via-yellow-500 to-blue'
-    },
-    {
-      icon: MapPin,
-      title: 'Virtual Address',
-      detail: '8401 Mayland Dr # 7297',
-      detail2: 'Richmond, VA 23294',
-      color: 'from-gold via-yellow-500 to-blue'
-    }
-  ];
-
   const faqItems = [
     {
       question: 'How soon can I use my benefits?',
@@ -134,7 +112,7 @@ export default function Home() {
     },
     {
       question: 'What is the best package for me?',
-      answer: 'The best package depends on your business needs and goals. Our Sentry tier is perfect for startups, Engine for growing businesses, Matrix for scaling operations, and MAÏ for enterprise-level automation.'
+      answer: 'The best package depends on your business needs and goals. Our Sentry tier is perfect for startups, Engine for growing businesses, Matrix for scaling operations, and MAÏ for enterprise solutions.'
     },
     {
       question: 'Can I upgrade or downgrade my plan?',
@@ -237,7 +215,7 @@ export default function Home() {
             Powerful <span className="text-gradient">Features</span>
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Discover the tools and capabilities that make MADWESS the ultimate platform for business automation
+            Discover the tools and capabilities that make MADWESS the ultimate platform for your business
           </p>
         </motion.div>
 
@@ -614,89 +592,73 @@ export default function Home() {
             Get in <span className="text-gradient">Touch</span>
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            We'd love to hear from you. Reach out to us for any questions or inquiries
+            We'd love to hear from you. Send us a message and we'll respond as soon as possible
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {/* Left side - Contact Info Cards */}
-          <div className="space-y-6">
-            {contactInfo.map((info, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.1 * idx + 0.2, duration: 0.5 }}
-              >
-                <Card className="group hover:shadow-xl hover:shadow-gold/10 transition-all duration-300 border-gray-800/50">
-                  <CardContent className="p-6">
-                    <div className="flex items-start gap-4">
-                      <div className={`w-12 h-12 rounded-lg bg-gradient-to-br ${info.color} flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}>
-                        <info.icon className="w-6 h-6 text-black" />
-                      </div>
-                      <div>
-                        <h3 className="text-lg font-semibold text-white mb-1">{info.title}</h3>
-                        <p className="text-gray-400 text-sm">{info.detail}</p>
-                        {info.detail2 && <p className="text-gray-400 text-sm">{info.detail2}</p>}
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-
-          {/* Right side - Contact Form */}
+        <div className="max-w-2xl mx-auto">
+          {/* Contact Form */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.5 }}
+            transition={{ delay: 0.2 }}
           >
             <Card className="border-gray-800/50">
               <CardContent className="p-8 space-y-5">
-                <div>
-                  <label className="text-sm text-gray-400 mb-2 block">Name</label>
-                  <input 
-                    type="text"
-                    placeholder="" 
-                    className="w-full h-12 px-4 rounded-lg border border-gray-800 bg-black/40 text-white placeholder:text-muted-foreground focus:ring-2 focus:ring-gold focus:border-gold backdrop-blur-xl transition-colors" 
-                  />
-                </div>
-                
-                <div>
-                  <label className="text-sm text-gray-400 mb-2 block">Email</label>
-                  <input 
-                    type="email" 
-                    placeholder="" 
-                    className="w-full h-12 px-4 rounded-lg border border-gray-800 bg-black/40 text-white placeholder:text-muted-foreground focus:ring-2 focus:ring-gold focus:border-gold backdrop-blur-xl transition-colors" 
-                  />
-                </div>
-                
-                <div>
-                  <label className="text-sm text-gray-400 mb-2 block">Phone</label>
-                  <input 
-                    type="tel"
-                    placeholder="" 
-                    className="w-full h-12 px-4 rounded-lg border border-gray-800 bg-black/40 text-white placeholder:text-muted-foreground focus:ring-2 focus:ring-gold focus:border-gold backdrop-blur-xl transition-colors" 
-                  />
-                </div>
-                
-                <div>
-                  <label className="text-sm text-gray-400 mb-2 block">Message</label>
-                  <textarea
-                    className="w-full h-32 px-4 py-3 rounded-lg border border-gray-800 bg-black/40 text-white placeholder:text-muted-foreground focus:ring-2 focus:ring-gold focus:border-gold backdrop-blur-xl resize-none transition-colors"
-                    placeholder=""
-                  />
-                </div>
-                
-                <Button 
-                  className="w-full h-12 text-base font-semibold btn-gradient text-black hover:opacity-90 transition-opacity" 
-                  size="lg"
-                >
-                  Send Message
-                </Button>
+                <form action="mailto:hello@madwess.ai" method="post" encType="text/plain">
+                  <div className="space-y-5">
+                    <div>
+                      <label className="text-sm text-gray-400 mb-2 block">Name</label>
+                      <input 
+                        type="text"
+                        name="name"
+                        placeholder="" 
+                        required
+                        className="w-full h-12 px-4 rounded-lg border border-gray-800 bg-black/40 text-white placeholder:text-muted-foreground focus:ring-2 focus:ring-gold focus:border-gold backdrop-blur-xl transition-colors" 
+                      />
+                    </div>
+                    
+                    <div>
+                      <label className="text-sm text-gray-400 mb-2 block">Email</label>
+                      <input 
+                        type="email"
+                        name="email"
+                        placeholder="" 
+                        required
+                        className="w-full h-12 px-4 rounded-lg border border-gray-800 bg-black/40 text-white placeholder:text-muted-foreground focus:ring-2 focus:ring-gold focus:border-gold backdrop-blur-xl transition-colors" 
+                      />
+                    </div>
+                    
+                    <div>
+                      <label className="text-sm text-gray-400 mb-2 block">Phone</label>
+                      <input 
+                        type="tel"
+                        name="phone"
+                        placeholder="" 
+                        className="w-full h-12 px-4 rounded-lg border border-gray-800 bg-black/40 text-white placeholder:text-muted-foreground focus:ring-2 focus:ring-gold focus:border-gold backdrop-blur-xl transition-colors" 
+                      />
+                    </div>
+                    
+                    <div>
+                      <label className="text-sm text-gray-400 mb-2 block">Message</label>
+                      <textarea
+                        name="message"
+                        required
+                        className="w-full h-32 px-4 py-3 rounded-lg border border-gray-800 bg-black/40 text-white placeholder:text-muted-foreground focus:ring-2 focus:ring-gold focus:border-gold backdrop-blur-xl resize-none transition-colors"
+                        placeholder=""
+                      />
+                    </div>
+                    
+                    <Button 
+                      type="submit"
+                      className="w-full h-12 text-base font-semibold btn-gradient text-black hover:opacity-90 transition-opacity" 
+                      size="lg"
+                    >
+                      Send Message
+                    </Button>
+                  </div>
+                </form>
               </CardContent>
             </Card>
           </motion.div>
